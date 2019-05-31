@@ -11,8 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
   ${THIS_PACKAGE_ROS_DEPS} message_generation)
 
 # Find SBPL
-find_package(SBPL REQUIRED)
-
+find_package(sbpl REQUIRED)
+INCLUDE_DIRECTORIES(${SBPL_INCLUDE_DIRS})
+#TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${catkin_LIBRARIES} ${SBPL_LIBRARIES})
 include_directories(include ${catkin_INCLUDE_DIRS} ${SBPL_INCLUDE_DIRS})
 
 ##############################################################################
